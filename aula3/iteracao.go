@@ -1,16 +1,19 @@
-package main
+package aula3
 
-import "strings"
+
+import (
+	"fmt"
+	"strings"
+)
 
 func Repetir(caractere string) string {
 	var repeticoes string
 	for i := 0; i < 5; i++ {
-		repeticoes += (strings.ToUpper(caractere) + "\n") //  adiciona o caractere
+		repeticoes += strings.ToUpper(caractere) + "\n"
 	}
 	return repeticoes
 }
 
 func main() {
-	repeticoes := Repetir("nrepet")
-	println(repeticoes)
+	fmt.Println(Repetir("a"))
 }
