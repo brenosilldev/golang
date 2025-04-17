@@ -1,9 +1,5 @@
 package main
 
-import (
-	"math/rand"
-)
-
 // func main() {
 
 // 	for i := 1; i < 50; i++ {
@@ -24,9 +20,9 @@ import (
 // 	}
 // }
 
-func roll(sides int) int {
-	return rand.Intn(sides) + 1
-}
+// func roll(sides int) int {
+// 	return rand.Intn(sides) + 1
+// }
 
 func main() {
 	// dice, sides := 2, 12
