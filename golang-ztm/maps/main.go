@@ -62,53 +62,58 @@ import "fmt"
 // }
 
 // }
+const (
+	online     = 0
+	offline    = 1 // corrigido typo
+	manutencao = 2
+	aposentado = 3
+)
 
-func servioreschange(servers []string) {
-	fmt.Println("Total servidores", len(servers))
+func servioreschange(statusMap map[string]int) {
+	total := len(statusMap)
+	fmt.Println("Total de servidores:", total)
 
-	stats := make(map[string]int)
-	for _, server := range servers {
-		switch stats {
+	stats := make(map[int]int)
+	for server, status := range statusMap {
+		switch status {
 		case online:
-			stats[online] += 1
-		case "aiur":
-			stats[aiur] += 1
-		case "omicron":
-			stats[omicron] += 1
-		case "w3375":
-			stats[w3375] += 1
-		case "centauri":		
-			stats[centauri] += 1
+			stats[online]++
+		case offline:
+			stats[offline]++
+		case manutencao:
+			stats[manutencao]++
+		case aposentado:
+			stats[aposentado]++
 		default:
 			fmt.Println("Servidor desconhecido:", server)
-
-
+		}
 	}
 
-	}
-
+	fmt.Println(stats[online], "servidores online")
+	fmt.Println(stats[offline], "servidores offline")
+	fmt.Println(stats[manutencao], "servidores em manutenção")
+	fmt.Println(stats[aposentado], "servidores aposentados")
 }
 
 func main() {
-	// Exercicios
-
-	const (
-		online     = 0
-		offilne    = 1
-		manutencao = 2
-		aposentado = 3
-	)
-
-	// Lista de servidores
-	var servers = []string{"darkstar", "aiur", "omicron", "w3375", "centauri"}
-
-	servioreschange(servers)
+	servers := []string{"darkstar", "aiur", "omicron", "w3375", "centauri", "baseline"}
 	serversStatus := make(map[string]int)
-	totalServers := len(servers)
-	fmt.Println("Total de servidores:", totalServers)
-	// Adiciona o status de cada servidor no mapa
+
+	// Inicializa todos como online
 	for _, server := range servers {
-		serversStatus[server] = online
+		serversStatus[server] = manutencao
 	}
 
+	// Ajusta alguns status
+	serversStatus["darkstar"] = aposentado
+	serversStatus["aiur"] = offline
+
+	// Exibe estatísticas
+	servioreschange(serversStatus)
+	fmt.Println("------------------")
+
+	serversStatus["w3375"] = online
+	serversStatus["aiur"] = offline
+	serversStatus["baseline"] = offline
+	servioreschange(serversStatus)
 }
