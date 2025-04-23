@@ -25,21 +25,21 @@ import (
 // func main() {
 // 	/*
 
-// 		// var myArray [5]int
-// 		// fmt.Println(myArray)
-// 		// myArra1 := [5]int{1, 2, 3, 4, 5}
-// 		// fmt.Println(myArra1)
+// var myArray [5]int
+// fmt.Println(myArray)
+// myArra1 := [5]int{1, 2, 3, 4, 5}
+// fmt.Println(myArra1)
 
-// 		// myArra2 := [...]int{1, 2, 3, 5}
-// 		// fmt.Println(myArra2)
+// myArra2 := [...]int{1, 2, 3, 5}
+// fmt.Println(myArra2)
 
-// 		// myArra3 := [5]int{1, 2, 3, 4}
-// 		// fmt.Println(myArra3)
+// myArra3 := [5]int{1, 2, 3, 4}
+// fmt.Println(myArra3)
 
-// 		// for i := 0; i < len(myArra3); i++ {
-// 		// 	myArra3[i] = i + 3
-// 		// 	fmt.Println("i: ", myArra3[i])
-// 		// }
+// for i := 0; i < len(myArra3); i++ {
+// 	myArra3[i] = i + 3
+// 	fmt.Println("i: ", myArra3[i])
+// }
 // 	*/
 
 // 	room := [...]Room{
