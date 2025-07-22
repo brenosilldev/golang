@@ -4,8 +4,14 @@ import "fmt"
 
 var x int
 
-const b = "bnren"
+/*	Posso cria meu type  */
+type ID int
 
 func main() {
-	fmt.Println("Mundo")
+
+	var b ID
+
+	b = 1
+
+	fmt.Printf("b:  %T\n", b) //ID(b)
 }
