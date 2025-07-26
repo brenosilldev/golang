@@ -34,34 +34,49 @@ import "fmt"
 
 // }
 
-type Pessoa struct {
-	nome      string
-	sobrenome string
-	idade     int
-}
+// type Pessoa struct {
+// 	nome      string
+// 	sobrenome string
+// 	idade     int
+// }
 
-func (p Pessoa) Falar() string {
-	return fmt.Sprintf("%s %s tem %d anos", p.nome, p.sobrenome, p.idade)
-}
+// func (p Pessoa) Falar() string {
+// 	return fmt.Sprintf("%s %s tem %d anos", p.nome, p.sobrenome, p.idade)
+// }
 
-type Pessoas interface {
-	Falar() string
-}
+// type Pessoas interface {
+// 	Falar() string
+// }
 
-func FazerPessoaFalar(p Pessoas) {
-	fmt.Println(p.Falar())
-}
+// func FazerPessoaFalar(p Pessoas) {
+// 	fmt.Println(p.Falar())
+// }
 
 /*************  ✨ Windsurf Command ⭐  *************/
-// main exemplo de como usar interfaces
-//
-// Mostra como uma interface pode ser usada com diferentes estruturas
-// e como pode ser usada para polimorfismo
-/*******  faf5c6e4-1adf-4d83-bb7e-fdbaaab16369  *******/func main() {
-	p := Pessoa{"Breno", "Silva", 21}
-	FazerPessoaFalar(p)
+// // main exemplo de como usar interfaces
+// //
+// // Mostra como uma interface pode ser usada com diferentes estruturas
+// // e como pode ser usada para polimorfismo
+// /*******  faf5c6e4-1adf-4d83-bb7e-fdbaaab16369  *******/func main() {
+// 	p := Pessoa{"Breno", "Silva", 21}
+// 	FazerPessoaFalar(p)
 
-	b := Pessoa{"Breno", "Silva", 22}
-	FazerPessoaFalar(b)
+// 	b := Pessoa{"Breno", "Silva", 22}
+// 	FazerPessoaFalar(b)
 
+// }
+
+func main() {
+	//Interface vazia
+	var a interface{} = 10 //implementa qualquer tipo de dado
+	var b interface{} = "Hello"
+
+	showType(a)
+	showType(b)
+
+}
+
+// Função que mostra o tipo e o valor de uma interface
+func showType(t interface{}) {
+	fmt.Printf("O tipo de t é %T e o valor é %v\n", t, t)
 }
