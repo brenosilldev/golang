@@ -21,4 +21,13 @@ func main() {
 		i++
 	}
 
+
+	for _, v := range "Hello World" {
+		fmt.Println(v)
+	}
+
+	for i, v := range []int{1, 2, 3, 4, 5} {
+		fmt.Println(i, v)
+	}
+	
 }
